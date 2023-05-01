@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% set active_page = "login" %}
+{% block title %}Surfers Only | Login{% endblock %}
+{% block header %}Surfers Only{% endblock %}
+{% block content %}
+<form>
+    <h2>Login</h2>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <div class="submit">
+        <input type="submit" value="Login">
+    </div>
+    <p>Don't have an account? <a href="{{url_for('signup')}}">Sign Up</a></p>
+</form>
+{% endblock %}

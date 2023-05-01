@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% set active_page = "signup" %}
+{% block title %}Surfers Only | Sign Up{% endblock %}
+{% block header %}Surfers Only{% endblock %}
+{% block content %}
+<form>
+  <form>
+    <h2>Sign Up</h2>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="repeat-password" placeholder="Repeat Password" required>
+    <input type="date" name="dob" placeholder="Date of Birth" required>
+    <div class="submit">
+      <input type="submit" value="Sign Up">
+    </div>
+    <p>Already have an account? <a href="{{url_for('login')}}">Login</a></p>
+  </form>
+</form>
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../static/styles/style.css">
+  </head>
+  <body>
+    <div class ="header">
+        <h1 class = "title">Surfers Only</h1>
+        <img class = "darkblue" src = "../static/images/DarkBlue.png">
+        <img class = "mediumblue" src = "../static/images/MediumBlue.png">
+        <img class = "lightblue" src = "../static/images/LightBlue.png">
+        <img class = "foam" src = "../static/images/Foam.png">
+    </div>
+    <img class = "arrow" src = "../static/images/Arrow.png">
+    <div class="container">
+      <form>
+        <h2>Sign Up</h2>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="repeat-password" placeholder="Repeat Password" required>
+        <input type="date" name="dob" placeholder="Date of Birth" required>
+        <div class="submit">
+          <input type="submit" value="Sign Up">
+        </div>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </form>
+    </div>
+  </body>
+</html> -->

@@ -1,0 +1,251 @@
+/*Chat GPT generated styles for login/signup pages*/
+
+body {
+    background-color: #E8DED2;
+  }
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+  
+.container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    background: transparent;
+}
+  
+h1 {
+    text-align: center;
+    font-size: 128px;
+    font-family: 'Poppins-Bold';
+    color: white;
+}
+
+h2 {
+    font-family: 'Poppins-Bold';
+    font-size: 64px;
+    text-align: center;
+    margin: 20px;
+}
+  
+form {
+    margin-top: 775px;
+    background-color: transparent;
+    font-family: 'Poppins-Regular';
+}
+  
+input[type="text"], input[type="password"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #5EAAA8;
+    border-radius: 5px;
+    box-shadow: none;
+}
+  
+.submit {
+    text-align: center;
+}
+  
+input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    margin: 20px auto 0;
+    background-color: #5EAAA8;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+input[type="submit"]:hover {
+    background-color: #4B8886;
+}
+  
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+  
+a {
+    color: #5EAAA8;
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+
+/* My own style for the header*/
+.header{
+    display: flex;
+    justify-content: center;
+}
+.header img {
+    position: absolute;
+    width: 100vw;
+}
+.darkblue {
+    z-index: -3;
+}
+.mediumblue {
+    margin-top: 281px;
+    z-index: -1;
+}
+.lightblue {
+    margin-top: 124px;
+    z-index: -2;
+}
+.foam {
+    margin-top: 430px;
+  }
+.title {
+    position: absolute;
+    margin-top: 150px;
+    z-index: -1;
+}
+.arrow {
+    position: absolute;
+    display: block;
+    z-index: 5;
+    margin-top: 600px;
+    transform: rotate(90deg);
+    width: 100px;
+    margin-left: 46vw;
+}
+
+.navbar {
+    background-color: #056676;
+    font-family: 'Poppins-Regular';
+}
+
+ 
+/*Chat GPT generated style for the duo settings form, edited by me*/
+
+.settings {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 566px;
+    padding: 20px;
+    z-index: 999;
+  }
+  
+  .settings h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .settings label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .settings input[type="range"],
+  .settings select {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .settings input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background-color: #5EAAA8;
+    outline: none;
+  }
+  
+  .settings input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+  }
+  
+  .settings select {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
+    outline: none;
+  }
+  
+  .settings select:focus {
+    border: 2px solid #007bff;
+  }
+  
+  .settings input[type="range"]:focus {
+    outline: none;
+  }
+  
+  .settings input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+  }
+  
+  .settings input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+  }
+
+  header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.card img {
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.card p {
+  margin-top: 10px;
+}
+
