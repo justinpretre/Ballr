@@ -3,13 +3,22 @@
 {% block title %}Surfers Only | Login{% endblock %}
 {% block header %}Surfers Only{% endblock %}
 {% block content %}
-<form>
-    <h2>Login</h2>
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <div class="submit">
-        <input type="submit" value="Login">
-    </div>
-    <p>Don't have an account? <a href="{{url_for('signup')}}">Sign Up</a></p>
-</form>
+<div class = login-div>
+    <form action = "/login" method = "POST" class = "login">
+        <h2>Login</h2>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <div class="submit">
+            <input type="submit" value="Login">
+        </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <p>Don't have an account? <a href="{{url_for('signup')}}">Sign Up</a></p>
+    </form>
+</div>
 {% endblock %}

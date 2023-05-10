@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% set active_page = "signup" %}
+{% block title %}Surfers Only | Sign Up{% endblock %}
+{% block header %}{{user.name}}{% endblock %}
+{% block content %}
+<div class="main">
+    <div class="left-side">
+        <div class = "greeting">
+            <h2>{{user.gender}}, {{user.age}}, {{user.zipcode}}</h2>
+        </div>
+        <div>
+            <img class = pfp src = "../static/images/Logo.png">
+        </div>
+    </div>
+    <div class = "right-side profile">
+        <h3>
+            About
+        </h3>
+        <div class = "about"
+            <p>Experience Level: {{user.experience}}</p>
+            <p>Language: {{user.language}}</p>
+            <hr>
+            <p>Bio: {{user.bio}}</p>
+        </div>
+        {% if user.id != currentUser.id %}
+        <div>
+            <h3>Send {{user.name}} a session request:</h3>
+            <br>
+            <form action = "/profile/{{user.id}}" method = "POST" class = "signup request">
+                <input type="text" name="month" id="month" placeholder="Month">
+                <input type="number" name="day" id="day" placeholder="Day">
+                <input type="text" name="time" id="time" placeholder="Time">
+                <input type="text" name = "location" id ="location" placeholder="Location"
+                <div>
+                    <input type="submit" value="Request">
+                </div>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

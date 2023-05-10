@@ -10,7 +10,7 @@
   </head>
   <body>
     
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg center">
 
         <!-- TODO: Fix the links -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,6 +20,9 @@
                 </li>
                 <li class="nav-item"></li>
                     <a class="nav-link {{ 'active' if active_page == 'findaduo' else '' }}" href="{{url_for('findaduo')}}">Find a Duo</a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link {{ 'active' if active_page == '' else '' }}" href="{{url_for('logout')}}">Logout</a>
                 </li>
             </ul>
         </div>

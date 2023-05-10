@@ -3,48 +3,51 @@
 {% block title %}Surfers Only | Sign Up{% endblock %}
 {% block header %}Surfers Only{% endblock %}
 {% block content %}
-<form>
-  <form>
+<div>
+  <form action = "/" method = "POST" class = "signup">
     <h2>Sign Up</h2>
-    <input type="text" name="username" placeholder="Username" required>
+    <input type="text" name="name" placeholder="Name" required>
     <input type="password" name="password" placeholder="Password" required>
-    <input type="password" name="repeat-password" placeholder="Repeat Password" required>
-    <input type="date" name="dob" placeholder="Date of Birth" required>
+    <input type="number" name="age" placeholder="Age" required min="18"><br>
+    <input type="number" name="zipcode" placeholder="Zipcode" required>
+    <input type="text" name = "language" placeholder="Language">
+
+    <h3>Gender</h3>
+    <input type="radio" id="Dude" name = "gender" value = "Dude">
+    <label for="Dude">Dude</label><br>
+    <input type="radio" id="Dudette" name = "gender" value = "Dudette">
+    <label for="Dudette">Dudette</label><br>
+    <input type="radio" id="Non-Binary" name = "gender" value = "Non-binary">
+    <label for="Non-Binary">Non-Binary</label><br>
+    <input type="radio" id="Other" name = "gender" value = "Other">
+    <label for="Other">Other</label><br>
+    
+    <h3>Surfing Experience</h3>
+    <input type="radio" id="Noob" name = "experience" value = "noob">
+    <label for="Noob">Noob</label><br>
+    <input type="radio" id="Beginner" name = "experience" value = "beginner">
+    <label for="Beginner">Beginner</label><br>
+    <input type="radio" id="Intermediate" name = "experience" value = "intermediate">
+    <label for="Intermediate">Intermediate</label><br>
+    <input type="radio" id="Advanced" name = "experience" value = "advanced">
+    <label for="Advanced">Advanced</label><br>
+    <input type="radio" id="Pro" name = "experience" value = "pro">
+    <label for="Pro">Pro</label><br>
+    <input type = "text" name = "bio" placeholder="Write a short bio...">
+    
     <div class="submit">
       <input type="submit" value="Sign Up">
     </div>
-    <p>Already have an account? <a href="{{url_for('login')}}">Login</a></p>
-  </form>
-</form>
-{% endblock %}
 
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="../static/styles/style.css">
-  </head>
-  <body>
-    <div class ="header">
-        <h1 class = "title">Surfers Only</h1>
-        <img class = "darkblue" src = "../static/images/DarkBlue.png">
-        <img class = "mediumblue" src = "../static/images/MediumBlue.png">
-        <img class = "lightblue" src = "../static/images/LightBlue.png">
-        <img class = "foam" src = "../static/images/Foam.png">
-    </div>
-    <img class = "arrow" src = "../static/images/Arrow.png">
-    <div class="container">
-      <form>
-        <h2>Sign Up</h2>
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="password" name="repeat-password" placeholder="Repeat Password" required>
-        <input type="date" name="dob" placeholder="Date of Birth" required>
-        <div class="submit">
-          <input type="submit" value="Sign Up">
-        </div>
-        <p>Already have an account? <a href="login.html">Login</a></p>
-      </form>
-    </div>
-  </body>
-</html> -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <p>{{msg}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+      
+    <p>Already have an account? <a href="{{url_for('login')}}">Login</a></p>
+</form>
+</div>
+{% endblock %}

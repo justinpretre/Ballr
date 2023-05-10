@@ -1,4 +1,4 @@
-/*Chat GPT generated styles for login/signup pages*/
+/*Styles for login/signup pages, originally developed by ChatGPT, heavily edited by me and repurposed for a few other forms*/
 
 body {
     background-color: #E8DED2;
@@ -13,10 +13,15 @@ body {
     src: url(../fonts/Poppins-Bold.ttf);
 }
   
-.container {
+.login-div{
     width: 400px;
     margin: 0 auto;
-    padding: 50px;
+    padding-left:100px;
+}
+.container {
+    width: 100vw;
+    margin-left: 120px;
+    margin-bottom: 500px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
     background: transparent;
@@ -36,13 +41,23 @@ h2 {
     margin: 20px;
 }
   
-form {
+.signup {
+    text-align: center;
+    margin-top: 775px;
+    background-color: transparent;
+    font-family: 'Poppins-Regular';
+    padding-right: 300px;
+    padding-left: 400px;
+}
+
+.login {
+    text-align: center;
     margin-top: 775px;
     background-color: transparent;
     font-family: 'Poppins-Regular';
 }
   
-input[type="text"], input[type="password"], input[type="date"] {
+input[type="text"], input[type="password"], input[type="date"], input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -50,7 +65,7 @@ input[type="text"], input[type="password"], input[type="date"] {
     border-radius: 5px;
     box-shadow: none;
 }
-  
+
 .submit {
     text-align: center;
 }
@@ -123,20 +138,20 @@ a:hover {
 }
 
 .navbar {
-    background-color: #056676;
+    background-color: #066879;
     font-family: 'Poppins-Regular';
 }
 
  
-/*Chat GPT generated style for the duo settings form, edited by me*/
+/*Chat GPT generated style for the duo settings form, heavily edited by me*/
 
 .settings {
-    position: fixed;
-    top: 50px;
-    right: 0;
+    text-align: left;
     width: 566px;
     padding: 20px;
-    z-index: 999;
+    border: solid #4B8886 2px;
+    border-radius: 5px;
+    margin-top:0px;
   }
   
   .settings h2 {
@@ -173,20 +188,20 @@ a:hover {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #333;
+    background-color:#066879;
     cursor: pointer;
   }
   
   .settings select {
     padding: 8px;
-    border: none;
+    border: 2px solid #5EAAA8;
     border-radius: 5px;
-    background-color: #eee;
+    background-color: transparent;
     outline: none;
   }
   
   .settings select:focus {
-    border: 2px solid #007bff;
+    border: 2px solid #066879;
   }
   
   .settings input[type="range"]:focus {
@@ -197,7 +212,7 @@ a:hover {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #333;
+    background-color: #056676;
     cursor: pointer;
   }
   
@@ -209,43 +224,142 @@ a:hover {
     cursor: pointer;
   }
 
-  header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
+/*Style for the main greeting on each page*/
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
 }
 
+.greeting h2 {
+    margin: 0px;
+}
+.greeting h3 {
+    color: #056676;
+}
+
+/*Style for the profile cards and the upcoming session cards*/
+
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
+    width: 40vw;
+    align-items: center;
+    border: solid #4B8886 2px;
+    border-radius: 5px;
+    width: fit-content;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.card-container h3 {
+    padding-top: 15px;
+    font-family: 'Poppins-Bold';
+}
+
+.profile-pic {
+    width: 75px;
+    height: 75px;
 }
 
 .card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  width: 300px;
+    width: 35vw;
+    margin:20px;
+    background-color: transparent;
+    border: 2px solid #6f9e97;
+    text-align: left;
 }
 
-.card img {
-  border-radius: 50%;
-  margin-right: 10px;
-  height: 50px;
-  width: 50px;
+.card-info {
+    height: fit-content;
+    font-family:'Poppins-Bold';
+    margin-left: 20px;
 }
 
-.card h3 {
-  margin: 0;
+.card-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.card p {
-  margin-top: 10px;
+.card-text {
+    font-family: 'Poppins-Regular';
+    text-align: left;
+    margin: 0px;
 }
 
+.card-title {
+    margin: 0px;
+}
+
+.btn-primary {
+    background-color: #5EAAA8;
+    border: 0px;
+    margin-top: 5px;
+}
+
+.btn-primary:hover {
+    background-color:#066879;
+}
+
+.btn-secondary {
+    border: 0px;
+    margin-top: 5px;
+}
+
+/*Page format styles to get everything aligned and centered properly */
+
+.main {
+    margin-top: 800px;
+    display: flex;
+    flex-direction: row;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.date h2 {
+    margin: 0px;
+}
+
+h5{
+    font-size: 1.25rem;
+}
+
+/*Specific styles for profile page elements*/
+
+.pfp {
+    width: 500px;
+}
+
+.request {
+    margin-top: 0px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.about {
+    padding: 15px;
+    border:#056676 solid 3px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.profile {
+    padding-left: 200px;
+}
+
+/*Quick tweeks for list of session requests*/
+
+.session {
+    margin: 0px;
+}
+
+.request-decision {
+    margin-bottom: 15px;
+}

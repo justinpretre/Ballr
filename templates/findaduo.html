@@ -3,64 +3,83 @@
 {% block title %}Surfers Only | Find a Duo{% endblock %}
 {% block header %}Find a Duo{% endblock %}
 {% block content %}
-<div class="settings">
-    <h2>Settings</h2>
-    
-    <label for="age-min-slider">Minimum Age:</label>
-    <input type="range" id="age-min-slider" min="18" max="100" value="25">
-    
-    <label for="age-max-slider">Maximum Age:</label>
-    <input type="range" id="age-max-slider" min="18" max="100" value="50">
-    
-    <label for="gender-selector">Gender:</label>
-    <select id="gender-selector">
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="non-binary">Non-binary</option>
-      <option value="other">Other</option>
-    </select>
-    
-    <label for="start-time-slider">Start Time:</label>
-    <input type="range" id="start-time-slider" min="5" max="21" step="0.5" value="8">
-    
-    <label for="end-time-slider">End Time:</label>
-    <input type="range" id="end-time-slider" min="6" max="22" step="0.5" value="15">
-    
-    <label for="experience-selector">Experience Level:</label>
-    <select id="experience-selector">
-      <option value="beginner">Beginner</option>
-      <option value="intermediate">Intermediate</option>
-      <option value="advanced">Advanced</option>
-      <option value="expert">Expert</option>
-      <option value="guru">Guru</option>
-      <option value="master">Master</option>
-    </select>
-    
-    <label for="language-selector">Language:</label>
-    <input list="language-options" id="language-selector" name="language-selector">
-    <datalist id="language-options">
-      <option value="English">
-      <option value="Spanish">
-      <option value="French">
-      <option value="German">
-      <option value="Japanese">
-      <option value="Chinese">
-      <option value="Arabic">
-      <option value="Portuguese">
-      <option value="Russian">
-      <option value="Italian">
-      <option value="Hindi">
-      <!-- Add more languages here as needed -->
-    </datalist>
-    
-    <label for="option-selector">Option:</label>
-    <select id="option-selector">
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2</option>
-      <option value="option3">Option 3</option>
-      <option value="option4">Option 4</option>
-      <option value="option5">Option 5</option>
-      <option value="option6">Option 6</option>
-    </select>
-  </div>
+<div class = "main">
+    <div class = "left-side">
+        <div class = "greeting">
+            <h2>Hang Loose!</h2>
+            <h3>Here are some surfers you might vibe with...</h3>
+        </div>
+        <div class = "card-container">
+            {% for option in viable_users %}
+            <div class="card">
+                <div class="card-body">
+                    <img class = "profile-pic" src = "../static/images/Logo.png">
+                    <div class = "card-info">
+                        <h5 class="card-title">{{option.name}}</h5>
+                        <p class="card-text">{{option.gender}}, {{option.age}}, {{option.zipcode}}</p>
+                        <a href="/profile/{{option.id}}" class="btn btn-primary">View Profile</a>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class = "card">
+                <div class ="card-body">
+                    <h3>No Options Yet</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class = "right-side">
+        <form class="settings signup" action = "/find-a-duo" method = "POST">
+            <h2>Settings</h2>
+            
+            <label for="age-min-slider">Minimum Age:</label>
+            <input type="range" id="age-min-slider" name = "min-age" min="18" max="100" value="25">
+            
+            <label for="age-max-slider">Maximum Age:</label>
+            <input type="range" id="age-max-slider" name = "max-age" min="18" max="100" value="50">
+            
+            <input type="text" name = "language" placeholder="Language" required>
+
+            <h3>Gender</h3>
+            <input type="radio" id="Dude" name = "gender" value = "Dude" required>
+            <label for="Dude">Dude</label>
+            <input type="radio" id="Dudette" name = "gender" value = "Dudette">
+            <label for="Dudette">Dudette</label>
+            <input type="radio" id="Non-Binary" name = "gender" value = "Non-binary">
+            <label for="Non-Binary">Non-Binary</label>
+            <input type="radio" id="Other" name = "gender" value = "Other">
+            <label for="Other">Other</label>
+
+            <h3>Experience</h3>
+            <input type="radio" id="Noob" name = "experience" value = "noob" required>
+            <label for="Noob">Noob</label>
+            <input type="radio" id="Beginner" name = "experience" value = "beginner">
+            <label for="Beginner">Beginner</label>
+            <input type="radio" id="Intermediate" name = "experience" value = "intermediate">
+            <label for="Intermediate">Intermediate</label>
+            <input type="radio" id="Advanced" name = "experience" value = "advanced">
+            <label for="Advanced">Advanced</label>
+            <input type="radio" id="Pro" name = "experience" value = "pro">
+            <label for="Pro">Pro</label>
+        
+            <div class="submit">
+                <input type="submit" value="Search">
+              </div>
+
+        </form>
+        <h3>My Profile</h3>
+            <div class="card">
+                <div class="card-body">
+                    <img class = "profile-pic" src = "../static/images/Logo.png">
+                    <div class = "card-info">
+                        <h5 class="card-title">{{currentUser.name}}</h5>
+                        <p class="card-text">{{currentUser.gender}}, {{currentUser.age}}, {{currentUser.zipcode}}</p>
+                        <a href="/profile/{{currentUser.id}}" class="btn btn-primary">View Profile</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
 {% endblock %}
