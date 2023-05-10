@@ -58,17 +58,21 @@ def home():
         requests = {}
         upcoming_sessions = []
         user = db_session.query(User).where(User.id == session["currentUser"]).first()
-        user_sessions = db_session.query(UserSession).where(UserSession.user_id == session["currentUser"])
-        print(user_sessions)
+        user_sessions = db_session.query(UserSession).where(UserSession.user_id == user.id)
         for u in user_sessions:
+            # Find the second user_session for the same session
             other_user_session = db_session.query(UserSession).where((UserSession.session_id == u.session_id) & (UserSession.user_id != user.id)).first()
             if other_user_session is not None:
                 this_session = db_session.query(Session).where(Session.id == other_user_session.session_id).first()
-                other_user = db_session.query(User).where(User.id == other_user_session.user_id).first()
-                print(other_user.name)
-                if (other_user is not None)&(other_user_session.requester_id!=user.id)&(this_session.accepted!="True"):
-                    requests.update({this_session:other_user})
-            upcoming_sessions = db_session.query(Session).where((Session.id == u.session_id)&(Session.accepted == "True"))
+                if this_session is not None:
+                    #Finds the other user from the other user session
+                    other_user = db_session.query(User).where(User.id == other_user_session.user_id).first()
+                    print(other_user.name)
+                    if (other_user is not None)&(other_user_session.requester_id!=user.id)&(this_session.accepted!="True"):
+                        requests.update({this_session:other_user})
+            upcoming_session = db_session.query(Session).where((Session.id == u.session_id)&(Session.accepted == "True")).first()
+            upcoming_sessions.append(upcoming_session)
+        print(upcoming_sessions)
         return render_template("home.html", user = user, requests = requests, upcoming = upcoming_sessions)
     else:
         return redirect(url_for('login'))
@@ -144,4 +148,4 @@ def deny(sessionid):
 
 if __name__ == "__main__":
     init_db()
-    app.run(port=5001, debug=True)
+    app.run(host = "172.16.8.127", port=5001)

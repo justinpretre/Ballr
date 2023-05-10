@@ -38,9 +38,6 @@ class Session(Base):
     location = Column("location", TEXT, nullable=False)
     accepted = Column("accepted", TEXT, nullable=False)
 
-    def __repr__(self):
-        return repr(self.time + " on " + self.date + " at " + self.location)
-
 class UserSession(Base):
     __tablename__ = "user_session"
 
